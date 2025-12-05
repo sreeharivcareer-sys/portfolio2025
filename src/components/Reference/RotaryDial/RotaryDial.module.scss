@@ -1,0 +1,101 @@
+.wrapper {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  user-select: none;
+  cursor: grab;
+  isolation: isolate; // forces new stacking universe
+}
+
+.wrapper:active {
+  cursor: grabbing;
+}
+
+
+
+.wrapper:hover {
+  overscroll-behavior: contain;
+}
+
+.dial {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+
+.ring {
+  position: absolute;
+  inset: 0;
+  border-style: solid;
+  border-radius: 50%;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+
+
+.item {
+  position: absolute;
+  pointer-events: none;
+  text-align: center;
+  transform-origin: center;
+  max-width: 120px;
+  z-index: 5; // ABOVE ring
+}
+
+
+
+.name {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.role {
+  font-size: 11px;
+  opacity: 0.65;
+}
+
+.active .name {
+  font-weight: 700;
+}
+
+.selectorLine {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background: red;
+  transform: translateY(-50%);
+}
+
+.centerLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.centerLabel span {
+  font-weight: 600;
+  font-size: 16px;
+  color: #2d393d;
+}
+
+.centerLabel small {
+  display: block;
+  margin-top: 4px;
+  margin-left: 4px;
+  font-size: 11px;
+  opacity: 0.6;
+}

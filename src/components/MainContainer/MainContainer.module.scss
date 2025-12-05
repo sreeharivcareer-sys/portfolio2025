@@ -1,0 +1,152 @@
+.mainContainer {
+    display: flex;
+    background-image: url("../../assets/bg.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: auto;
+    height: 100vh;
+    margin-top: -88px;
+
+    .leftContainer {
+        margin-top: 88px;
+        width: 50%;
+
+        .leftWrapper {
+            margin-top: 30vh;
+            padding-left: 2rem;
+
+            .nameLabel {
+                font-size: 15px;
+                font-weight: 600;
+                color: #476671;
+            }
+
+            .name {
+                font-size: 40px;
+                font-weight: 600;
+                color: #2d393d;
+
+            }
+
+            .subName {
+                font-size: 40px;
+                font-weight: 600;
+                color: #476671;
+                font-style: italic;
+
+            }
+
+            .headTextContainer {
+                margin-top: 20px;
+
+                .headText {
+                    color: #2d393d;
+                    line-height: 90px;
+                    font-size: 115px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .rightContainer {
+        width: 50%;
+        margin-top: 88px;
+        padding-right: 2rem;
+        text-align: right;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        position: relative;
+
+        .serviceLabelContainer {
+            width: max-content;
+            text-align: right;
+            padding-bottom: 30px;
+            border-color: #757976;
+            border-width: 1px 0;
+            border-style: solid;
+            height: max-content;
+
+            .serviceLabels {
+                font-size: 14px;
+                color: #476671;
+                margin-top: 30px;
+            }
+        }
+
+        .connectContainer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 100px;
+
+            .connectLabel {
+                font-size: 14px;
+                color: #476671;
+                text-align: right;
+            }
+
+            .connectIcon {
+                width: 24px;
+                height: 24px;
+                margin-left: 10px;
+            }
+        }
+
+        .profWrapper {
+            position: absolute;
+            bottom: 105px;
+            display: flex;
+            justify-content: flex-end;
+
+            .profDescContainer {
+                width: 40%;
+
+                .profDesc {
+                    font-size: 14px;
+                    color: #2d393d;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+
+}
+
+.scrollerContainer {
+    position: relative;
+    height: 170px;
+    /* adjust as needed */
+    overflow: hidden;
+    margin-top: -42px;
+}
+
+.scrollerText {
+    position: absolute;
+    color: rgb(255, 94, 0);
+    width: 100%;
+    font-size: 115px;
+    font-weight: bold;
+    animation: scrollUp 0.6s ease forwards;
+}
+
+@keyframes scrollUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+
+.scrollLabel {
+    padding-left: 2rem;
+    font-size: 14px;
+    color: #2d393d;
+}

@@ -1,0 +1,154 @@
+.expContainer {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    position: relative;
+
+    .expWrapper {
+        height: 100%;
+        display: flex;
+
+        .expLeft {
+            padding: 8rem 0 86px 2rem;
+            width: 18%;
+            background-color: #2d393d;
+            border-right: 25px solid #FE5710;
+
+            .expLabel {
+                color: #fff;
+                font-size: 40px;
+                font-weight: 600;
+                line-height: 45px;
+            }
+
+            .companyList {
+                text-align: left;
+
+                .company {
+                    height: 100px;
+                    margin-top: 40px;
+                }
+
+
+            }
+        }
+
+        .expRight {
+            width: 75%;
+            height: 100%;
+            padding-left: 10rem;
+            position: relative;
+
+            .expNameContainer {
+                position: relative;
+                margin-top: 8rem;
+                font-size: 24px;
+                font-weight: 600;
+                height: 150px;
+
+            }
+
+            .companyName {
+                margin-top: 10px;
+                height: 100px;
+                margin-left: 20px;
+                font-size: 105px;
+                line-height: 95px;
+                word-spacing: 20px;
+                font-weight: 600;
+                color: #2d393d;
+
+                position: absolute;
+                opacity: 0;
+                transform: translateX(200px);
+                /* start slightly to the right */
+                transition:
+                    opacity 0.5s ease,
+                    transform 0.5s ease;
+                white-space: nowrap;
+            }
+
+            .companyName.show {
+                opacity: 1;
+                transform: translateX(0);
+                // border-bottom: 1px solid #FE5710;
+                /* slide into place */
+            }
+
+            .companyDesc {
+                transition:
+                    opacity 0.5s ease,
+                    transform 0.5s ease;
+            }
+
+            .descWrapper {
+                position: absolute;
+                z-index: 1;
+                top: 300px;
+                left: 200px;
+            }
+
+            .bullet {
+                font-size: 35px;
+                margin-top: 20px;
+                display: flex;
+                color: #ffffff;
+            }
+
+            .bulletPoints {
+                width: 15px;
+                height: 15px;
+                margin-top: -9px;
+                margin-right: 25px;
+            }
+
+            .descText {
+                font-size: 25px;
+                font-weight: 100;
+                color: #2d393d;
+                max-width: 95%;
+            }
+        }
+    }
+
+    .companyContainer {
+        width: 100%;
+        height: 100px;
+        transition: width 0.3s ease, height 0.3s ease;
+
+        img {
+            height: 100px;
+            margin-left: 4rem;
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+    }
+
+    .companyContainer.underLine {
+        border-right: 25px solid #2d393d;
+        height: 90px;
+
+        img {
+            height: 90px;
+        }
+
+    }
+
+    .companyWrapper {
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+}
+
+
+.endSection {
+    width: 35%;
+    height: 100vh;
+    background-color: #2d393d;
+}
+
+.bgWrapper {
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}

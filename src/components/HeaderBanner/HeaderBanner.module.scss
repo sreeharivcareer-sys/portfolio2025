@@ -1,0 +1,43 @@
+.bannerContainer {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+
+    .linkContainer {
+        display: flex;
+        gap: 20px;
+        color: #476671;
+
+        .bannerLink {
+            font-size: 14px;
+            text-decoration: none;
+            color: #476671;
+
+            &:hover {
+                color: red;
+            }
+        }
+    }
+
+    .menuContainer {
+        display: flex;
+        gap: 20px;
+        color: #476671;
+
+        .menuItem{
+            cursor: pointer;
+            font-size: 14px;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+
+    .talk {
+        text-decoration: underline;
+        color: #476671;
+        font-size: 15px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+}
