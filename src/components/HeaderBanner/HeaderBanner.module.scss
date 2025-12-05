@@ -3,6 +3,15 @@
     display: flex;
     justify-content: space-between;
 
+    @media (min-width: 675px) and (max-width: 900px) {
+        //TAB
+        display: none;
+    }
+
+    @media (max-width: 675px) {
+        display: none;
+    }
+
     .linkContainer {
         display: flex;
         gap: 20px;
@@ -24,9 +33,10 @@
         gap: 20px;
         color: #476671;
 
-        .menuItem{
+        .menuItem {
             cursor: pointer;
             font-size: 14px;
+
             &:hover {
                 color: red;
             }
@@ -40,4 +50,79 @@
         cursor: pointer;
         font-weight: bold;
     }
+}
+
+.mobMenu {
+    display: none;
+    padding: 2rem;
+
+
+    @media (min-width: 675px) and (max-width: 900px) {
+        //TAB
+        display: block;
+    }
+
+    @media (max-width: 675px) {
+        display: block;
+    }
+
+    .wishContainer {
+        margin-top: 30px;
+
+        @media (min-width: 675px) and (max-width: 900px) {
+            //TAB
+            display: none;
+        }
+    }
+}
+
+.menuPopUp {
+    position: absolute;
+    opacity: 0;
+    // display:none;
+    left: 0;
+    top: 0;
+    width: 0%;
+    padding: 10px;
+    height: 100vh;
+    background-color: #fff;
+    transform: translateX(200px);
+    /* start slightly to the right */
+    transition:
+        transform 0.3s ease-in;
+
+    .menuHeader {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        .closeMenu {
+            color: #2d393d;
+            font-size: 20px;
+            padding: 20px;
+            cursor: pointer;
+        }
+        .menuLabel {
+            color: #2d393d;
+            font-size: 20px;
+            padding: 20px;
+        }
+    }
+    .menuContainer {
+        padding: 10px;
+        .menuItem {
+            font-size: 5rem;
+            font-weight: 500;
+            color:#2d393d;
+            text-transform:uppercase;
+            &:hover {
+                color: #FE5710;
+            }
+        }
+    }
+}
+
+.menuPopUp.show {
+    opacity: 1;
+    transform: translateX(0);
+    width: 96%;
 }

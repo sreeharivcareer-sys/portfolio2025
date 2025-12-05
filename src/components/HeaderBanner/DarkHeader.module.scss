@@ -3,6 +3,16 @@
     display: flex;
     justify-content: space-between;
 
+    @media (min-width: 675px) and (max-width: 900px) {
+        //TAB
+        display: none;
+    }
+
+    @media (max-width: 675px) {
+
+        display: none;
+    }
+
     .linkContainer {
         display: flex;
         gap: 20px;

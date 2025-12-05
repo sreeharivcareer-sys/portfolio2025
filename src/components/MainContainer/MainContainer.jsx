@@ -6,7 +6,7 @@ export const MainContainer = () => {
     const companies = [
         "TCS",
         "KEYVALUE",
-        "ASPIRE SYS."
+        "ASPIRE"
     ];
 
     const [index, setIndex] = useState(0);
@@ -32,6 +32,8 @@ export const MainContainer = () => {
                     </div>
                     <div className={styles.headTextContainer}>
                         <div className={styles.headText}>SENIOR WEB&MOBILE <br /> DEVELOPER FOR  </div>
+                        
+                        <div className={styles.headTextSmall}>SENIOR <br/> WEB-MOBILE <br /> DEV FOR  </div>
                     </div>
                     <div className={styles.scrollerContainer}>
                         <div key={index} className={`${styles.scrollerText} ${styles.scrollUp}`}>
@@ -41,6 +43,11 @@ export const MainContainer = () => {
                 </div>
                 <div className={styles.scrollLabel}>(Scroll to explore)</div>
             </div>
+            <div className={styles.serviceLabelContainerTab}>
+                    <div className={styles.serviceLabels}>Web Development</div>
+                    <div className={styles.serviceLabels}>Mobile Development</div>
+                    <div className={styles.serviceLabels}>App Designs</div>
+                </div>
             <div className={styles.rightContainer}>
                 <div className={styles.serviceLabelContainer}>
                     <div className={styles.serviceLabels}>Web Development</div>

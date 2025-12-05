@@ -16,11 +16,13 @@ function App() {
   const [blackMenu, setBlackMenu] = useState(false);
   const [blackWish, setBlackWish] = useState(false);
   const [animateScore, setAnimateScore] = useState(false);
+  const [notMain, setNotMain] = useState(false);
 
   const refA = useRef(null);
   const refTools = useRef(null);
-  const refEdu = useRef(null);  
-  const refConnect = useRef(null)
+  const refEdu = useRef(null);
+  const refConnect = useRef(null);  
+  const refMain = useRef(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,6 +45,9 @@ function App() {
             setBlackMenu(entry.isIntersecting);
             setBlackWish(entry.isIntersecting);
           }
+          if (entry.target === refMain.current) {
+            setNotMain(!entry.isIntersecting);            
+          }
 
         });
       },
@@ -53,6 +58,7 @@ function App() {
     if (refTools.current) observer.observe(refTools.current);
     if (refEdu.current) observer.observe(refEdu.current);
     if (refConnect.current) observer.observe(refConnect.current);
+    if (refMain.current) observer.observe(refMain.current);
 
     return () => observer.disconnect();
   }, []);
@@ -66,18 +72,18 @@ function App() {
   return (
     <div className="App">
       <div className='stickey-header'>
-        {blackMenu ? <DarkHeader blackMenu={blackMenu} blackWish={blackWish} /> : <HeaderBanner blackWish={blackWish} blackMenu={blackMenu} />}
+        {blackMenu ? <DarkHeader notMain={notMain} blackMenu={blackMenu} blackWish={blackWish} /> : <HeaderBanner notMain={notMain} blackWish={blackWish} blackMenu={blackMenu} />}
       </div>
 
 
-      <div className="scroll-section">
+      <div ref={refMain} className="scroll-section">
         <MainContainer />
       </div>
 
       <div className="scroll-section">
         <Skills />
       </div>
-      <div className="scroll-section">
+      {/*<div className="scroll-section">
         <Tools />
       </div>
       <div ref={refA} className="scroll-section">
@@ -91,7 +97,7 @@ function App() {
       </div>
        <div ref={refConnect}  className="scroll-section">
         <Connect />
-      </div>
+      </div> */}
     </div>
   );
 }

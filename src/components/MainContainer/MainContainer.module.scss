@@ -5,35 +5,79 @@
     background-position: center;
     background-repeat: no-repeat;
     overflow-y: auto;
-    height: 100vh;
-    margin-top: -88px;
+    height: 100%;
+    margin: 20px;
+
+    @media (min-width: 675px) and (max-width: 900px) {
+        display: block;
+        background-size: contain;
+        background-image: url("../../assets/bg_tab.png");
+    }
+
+    @media (max-width: 675px) {
+        display: block;
+        width: 95%;
+        margin-top: 10px;
+        background-size: cover;
+        background-position: top;
+        background-image: url("../../assets/bg_mob.png");
+    }
+
 
     .leftContainer {
-        margin-top: 88px;
         width: 50%;
 
+
+        @media (min-width: 675px) and (max-width: 900px) {
+            width: 100%;
+            max-height: 50vh;
+        }
+
+        @media (max-width: 675px) {
+            width: 100%;
+        }
+
         .leftWrapper {
-            margin-top: 30vh;
-            padding-left: 2rem;
+            margin-top: 35vh;
+
+            @media (min-width: 675px) and (max-width: 900px) {
+                margin-top: 15vh;
+            }
+
+            @media (max-width: 675px) {
+                margin-top: 25vh;
+            }
 
             .nameLabel {
-                font-size: 15px;
+                font-size: 1rem;
                 font-weight: 600;
                 color: #476671;
+
+                @media (min-width: 675px) and (max-width: 900px) {
+                    font-size: 1.2rem;
+                }
             }
 
             .name {
-                font-size: 40px;
+                font-size: 2rem;
                 font-weight: 600;
                 color: #2d393d;
+
+                @media (min-width: 675px) and (max-width: 900px) {
+                    font-size: 3rem;
+                }
 
             }
 
             .subName {
-                font-size: 40px;
+                font-size: 2rem;
                 font-weight: 600;
                 color: #476671;
                 font-style: italic;
+
+                @media (min-width: 675px) and (max-width: 900px) {
+                    font-size: 3rem;
+                }
 
             }
 
@@ -42,23 +86,71 @@
 
                 .headText {
                     color: #2d393d;
-                    line-height: 90px;
-                    font-size: 115px;
+                    line-height: 3.9rem;
+                    font-size: 5rem;
                     font-weight: 600;
+
+                    @media (min-width: 675px) and (max-width: 900px) {
+                        display: none;
+                    }
+
+                    @media (max-width: 675px) {
+                        display: none;
+                    }
                 }
+
+                .headTextSmall {
+                    display: none;
+                    color: #2d393d;
+                    line-height: 3.9rem;
+                    font-size: 5rem;
+                    font-weight: 600;
+
+                    @media (min-width: 675px) and (max-width: 900px) {
+                        display: block;
+                    }
+
+                    @media (max-width: 675px) {
+                        line-height: 4.1rem;
+                        font-size: 5rem;
+                        max-width: 80%;
+                        display: block;
+                    }
+
+                }
+
             }
         }
+
     }
 
     .rightContainer {
         width: 50%;
-        margin-top: 88px;
+        margin-top: 20vh;
         padding-right: 2rem;
         text-align: right;
         display: flex;
         align-items: flex-end;
         flex-direction: column;
         position: relative;
+
+
+        @media (min-width: 675px) and (max-width: 900px) {
+            //Tab
+            width: 100%;
+            height: 30vh;
+            margin-top: 0px;
+            padding-right: 0px;
+            flex-direction: row;
+        }
+
+        @media (max-width: 675px) {
+            width: 100%;
+            display: block;
+            margin-top: 0px;
+            padding-right: 0px;
+        }
+
 
         .serviceLabelContainer {
             width: max-content;
@@ -69,6 +161,15 @@
             border-style: solid;
             height: max-content;
 
+            @media (min-width: 675px) and (max-width:900px) {
+                //Tab
+                display: none;
+            }
+
+            @media (max-width: 675px) {
+                display: none;
+            }
+
             .serviceLabels {
                 font-size: 14px;
                 color: #476671;
@@ -78,11 +179,22 @@
 
         .connectContainer {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             align-items: center;
             margin-top: 100px;
 
+            @media (min-width: 675px) and (max-width: 900px) {
+                //Tab
+                width: 30rem;
+            }
+
+            @media (max-width: 675px) {
+                margin-top: 1vh;
+            }
+
+
             .connectLabel {
+                width: max-content;
                 font-size: 14px;
                 color: #476671;
                 text-align: right;
@@ -96,16 +208,32 @@
         }
 
         .profWrapper {
-            position: absolute;
-            bottom: 105px;
             display: flex;
             justify-content: flex-end;
+            margin-top: 15vh;
+
+            @media (min-width: 675px) and (max-width: 900px) {
+                position: relative;
+            }
+
+            @media (max-width: 675px) {
+                margin-top: 2vh;
+                display: block;
+            }
 
             .profDescContainer {
-                width: 40%;
+                width: 60%;
+
+                @media (min-width: 675px) and (max-width: 900px) {
+                    width: 70%;
+                }
+
+                @media (max-width: 675px) {
+                    width: 95%;
+                }
 
                 .profDesc {
-                    font-size: 14px;
+                    font-size: 1rem;
                     color: #2d393d;
                     line-height: 24px;
                 }
@@ -117,19 +245,22 @@
 
 .scrollerContainer {
     position: relative;
-    height: 170px;
-    /* adjust as needed */
-    overflow: hidden;
-    margin-top: -42px;
+    height: 6rem;
 }
 
 .scrollerText {
     position: absolute;
-    color: rgb(255, 94, 0);
+    color: #ff5e00;
     width: 100%;
-    font-size: 115px;
+    line-height: 4.6rem;
+    font-size: 6rem;
     font-weight: bold;
     animation: scrollUp 0.6s ease forwards;
+
+    @media (max-width: 675px) {
+        line-height: 4.6rem;
+        font-size: 5rem;
+    }
 }
 
 @keyframes scrollUp {
@@ -149,4 +280,37 @@
     padding-left: 2rem;
     font-size: 14px;
     color: #2d393d;
+
+    @media (min-width: 675px) and (max-width: 900px) {
+        //Tab
+        display: none;
+    }
+
+    @media (max-width: 675px) {
+        display: none;
+    }
+
+}
+
+.serviceLabelContainerTab {
+    width: max-content;
+    text-align: left;
+    padding-bottom: 30px;
+    border-color: #757976;
+    border-width: 1px 0;
+    border-style: solid;
+    height: max-content;
+    margin-top: 10vh;
+    display: none;
+
+    @media (min-width: 675px) and (max-width: 900px) {
+        //Tab
+        display: block;
+    }
+
+    .serviceLabels {
+        font-size: 14px;
+        color: #476671;
+        margin-top: 30px;
+    }
 }
