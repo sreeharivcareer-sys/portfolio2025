@@ -9,51 +9,46 @@ export default function RotaryDial({
   size = 400,
   onChange
 }) {
-  const [rotation, setRotation] = useState(0)      // current animated rotation (degrees)
-  const targetRef = useRef(0)                      // where we want to end up (degrees)
+  const [rotation, setRotation] = useState(0)
+  const rotationRef = useRef(0)
+  const targetRef = useRef(0)
   const animRef = useRef(null)
   const runningRef = useRef(false)
-  const rotationRef = useRef(0)
-  const wrapperRef = useRef(null)                 // mirror of current rotation for rAF loop
+  const wrapperRef = useRef(null)
+  const snapTimeout = useRef(null)
 
   const total = data.length
   const sliceAngle = 360 / Math.max(1, total)
 
-  // compute selected index based on current (animated) rotation
   const selectedIndex = getSelectedIndex(rotation, total)
 
-  // call onChange when selection changes
   useEffect(() => {
-    if (onChange && data[selectedIndex]) onChange(data[selectedIndex])
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (onChange && data[selectedIndex]) {
+      onChange(data[selectedIndex])
+    }
   }, [selectedIndex])
 
-  // start/stop animation loop
   function startAnim() {
     if (runningRef.current) return
     runningRef.current = true
-    const step = (now) => {
+
+    const step = () => {
       const current = rotationRef.current
       const target = targetRef.current
       const diff = target - current
 
+      const ease = 0.1
 
-      // ease factor (0-1). larger = snappier. adjust for feel.
-      const ease = 0.18
-
-      // if very close, snap and stop
       if (Math.abs(diff) < 0.01) {
         rotationRef.current = target
-        setRotation(roundDeg(rotationRef.current))
+        setRotation(target)
         runningRef.current = false
         animRef.current = null
         return
       }
 
-      // lerp toward target
       rotationRef.current = current + diff * ease
-      setRotation(roundDeg(rotationRef.current))
-
+      setRotation(rotationRef.current)
       animRef.current = requestAnimationFrame(step)
     }
 
@@ -61,32 +56,31 @@ export default function RotaryDial({
   }
 
   function stopAnim() {
-    if (animRef.current) {
-      cancelAnimationFrame(animRef.current)
-      animRef.current = null
-    }
+    if (animRef.current) cancelAnimationFrame(animRef.current)
+    animRef.current = null
     runningRef.current = false
   }
 
-  // helper so numbers are stable for selection math
-  function roundDeg(v) {
-    return Math.round(v * 1000) / 1000
-  }
-
-  // wheel listener (real DOM) - one tick => one slice
   useEffect(() => {
     const el = wrapperRef.current
     if (!el) return
 
-    const onWheel = (e) => {
+    const onWheel = e => {
       e.preventDefault()
-      const delta = e.deltaY > 0 ? -sliceAngle : sliceAngle
+
+      const sensitivity = 0.4
+      const delta = -e.deltaY * sensitivity
       targetRef.current += delta
 
-      if (!runningRef.current) {
-        rotationRef.current = rotationRef.current ?? rotation
-        startAnim()
-      }
+      if (!runningRef.current) startAnim()
+
+      clearTimeout(snapTimeout.current)
+      snapTimeout.current = setTimeout(() => {
+        const snapped =
+          Math.round(targetRef.current / sliceAngle) * sliceAngle
+        targetRef.current = snapped
+        if (!runningRef.current) startAnim()
+      }, 150)
     }
 
     el.addEventListener('wheel', onWheel, { passive: false })
@@ -97,31 +91,23 @@ export default function RotaryDial({
     }
   }, [sliceAngle])
 
-
-  // make sure rotationRef mirrors rotation on mount/changes outside rAF
   useEffect(() => {
     rotationRef.current = rotation
   }, [rotation])
 
-  // selection function you already have, unchanged (centered selection)
-  function getSelectedIndex(rotationValue, totalCount) {
-    if (totalCount <= 0) return 0
-    const slice = 360 / totalCount
+  function getSelectedIndex(rot, count) {
+    if (count <= 0) return 0
+    const slice = 360 / count
     const half = slice / 2
 
-    // Normalize angle to 0–360
-    let angle = (rotationValue % 360 + 360) % 360
-
-    // Reverse because you rotate anticlockwise with negative delta
+    let angle = ((rot % 360) + 360) % 360
     angle = (360 - angle) % 360
-
-    // Shift so LEFT is the reference point (left = 270 CSS, we're aligning)
     angle = (angle + 270) % 360
 
-    for (let i = 0; i < totalCount; i++) {
+    for (let i = 0; i < count; i++) {
       const center = i * slice
       let diff = Math.abs(angle - center)
-      diff = Math.min(diff, 360 - diff) // wrap-around safe
+      diff = Math.min(diff, 360 - diff)
       if (diff < half) return i
     }
 
@@ -155,27 +141,26 @@ export default function RotaryDial({
         <small>to select</small>
       </div>
 
-      {/* rotation is controlled by JS animation; remove CSS transition from .dial */}
       <div className={styles.dial} style={{ transform: `rotate(${rotation}deg)` }}>
-        {data.map((person, i) => {
+        {data.map((item, i) => {
           const angle = i * sliceAngle
           const radius = size / 2 - ringWidth / 2
           const pos = polarToXY(angle, radius)
-          const isActive = i === selectedIndex
+          const active = i === selectedIndex
 
           return (
             <div
-              key={person.id}
-              className={`${styles.item} ${isActive ? styles.active : ''}`}
+              key={item.id}
+              className={`${styles.item} ${active ? styles.active : ''}`}
               style={{
                 left: pos.x,
                 top: pos.y,
-                color: isActive ? activeColor : '#fff',
+                color: active ? activeColor : '#fff',
                 transform: `translate(-50%, -50%) rotate(${-rotation}deg)`
               }}
             >
-              <div className={styles.name}>{person.name}</div>
-              <div className={styles.role}>{person.role}</div>
+              <div className={styles.name}>{item.name}</div>
+              <div className={styles.role}>{item.role}</div>
             </div>
           )
         })}
