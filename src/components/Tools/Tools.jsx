@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './Tools.module.scss';
 import toolsData from '../../data/tools';
 
@@ -28,7 +28,7 @@ export const Tools = () => {
                     <div className={styles.toolsGrid}>
                         {tools.map(tool => (
                             <div className={styles.tile} key={`${tool.id}-name`} onMouseEnter={() => setSelectedTool(tool)}>
-                                <img className={styles.toolsIcon} src={`/assets/icons/${tool.id}.png`} />
+                                <img className={styles.toolsIcon} src={`/assets/icons/${tool.id}.png`} alt={`${tool.name}-icon`} />
                                 <div className={styles.toolsText}>{tool.name}</div>
                             </div>
                         ))}

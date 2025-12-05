@@ -31,7 +31,6 @@ export default function RotaryDial({
   function startAnim() {
     if (runningRef.current) return
     runningRef.current = true
-    let lastTime = performance.now()
     const step = (now) => {
       const current = rotationRef.current
       const target = targetRef.current

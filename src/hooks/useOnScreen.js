@@ -12,7 +12,7 @@ export function useOnScreen(options = {}) {
 
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, [options]);
 
   return [ref, visible];
 }

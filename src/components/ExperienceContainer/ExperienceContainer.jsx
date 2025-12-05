@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from "framer-motion";
 import styles from './ExperienceContainer.module.scss';
-import { style } from 'framer-motion/client';
 
 
 export const ExperienceContainer = () => {

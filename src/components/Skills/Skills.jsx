@@ -36,27 +36,6 @@ export default function Skills() {
         { id: "OpenAi", name: "Open Ai Integration", level: 60 }
     ];
 
-
-    //     HTML       90
-    // CSS/SCSS   85
-    // React      85
-    // JS         80
-    // TypeScript 75
-    // Redux      70
-    // GraphQL    65
-    // Tailwind   60
-    // OpenAI     60
-
-
-    const Tools = [
-        { name: "Adobe Photoshop", level: 70 },
-        { name: "Adobe Illustrator", level: 80 },
-        { name: "Adobe Xd", level: 80 },
-        { name: "Adobe Premiere Pro", level: 65 },
-        { name: "Inkscape", level: 90 },
-        { name: "Blender", level: 60 }
-    ]
-
     return (
         <section ref={ref} className={styles.skillContainer}>
             <div className={styles.skillsHeader}>Technical Proficiency</div>

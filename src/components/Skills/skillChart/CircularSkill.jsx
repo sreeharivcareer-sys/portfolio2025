@@ -21,7 +21,7 @@ export default function CircularSkill({ name, level, active }) {
   useEffect(() => {
     const progress = circumference - (level / 100) * circumference;
     setOffset(active ? progress : circumference);
-  }, [active, level]);
+  }, [active, level, circumference]);
 
   return (
     <div className={styles.skillWrapper}>

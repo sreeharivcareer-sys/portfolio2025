@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React  from 'react'
 import { Wish } from '../WishComponent/Wish'
 import styles from './HeaderBanner.module.scss';
 
