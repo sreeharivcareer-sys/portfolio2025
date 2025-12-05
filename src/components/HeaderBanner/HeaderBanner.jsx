@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import { Wish } from '../WishComponent/Wish'
 import styles from './HeaderBanner.module.scss';
 
@@ -7,8 +7,8 @@ export const HeaderBanner = ({ blackMenu, blackWish }) => {
         <div className={styles.bannerContainer}>
             <Wish blackMenu={blackMenu} blackWish={blackWish} />
             <div className={styles.linkContainer}>
-                <a href="" className={styles.bannerLink}>LinkedIn</a> /
-                <a href="" className={styles.bannerLink}>Resume</a>
+                <a href="https://linkedin.com/in/sreehari-v-1249b1103" className={styles.bannerLink}>LinkedIn</a> /
+                <p href="" className={styles.bannerLink}>Resume</p>
             </div>
             <div className={styles.menuContainer}>
                 <div className={styles.menuItem}>Index</div> /
