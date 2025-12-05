@@ -13,7 +13,8 @@ export default function RotaryDial({
   const targetRef = useRef(0)                      // where we want to end up (degrees)
   const animRef = useRef(null)
   const runningRef = useRef(false)
-  const rotationRef = useRef(0)                    // mirror of current rotation for rAF loop
+  const rotationRef = useRef(0)
+  const wrapperRef = useRef(null)                 // mirror of current rotation for rAF loop
 
   const total = data.length
   const sliceAngle = 360 / Math.max(1, total)
@@ -35,6 +36,7 @@ export default function RotaryDial({
       const current = rotationRef.current
       const target = targetRef.current
       const diff = target - current
+
 
       // ease factor (0-1). larger = snappier. adjust for feel.
       const ease = 0.18
@@ -73,21 +75,15 @@ export default function RotaryDial({
 
   // wheel listener (real DOM) - one tick => one slice
   useEffect(() => {
-    const el = document.querySelector(`.${styles.wrapper}`)
+    const el = wrapperRef.current
     if (!el) return
 
     const onWheel = (e) => {
       e.preventDefault()
-
-      // decide direction. you used negative delta for clockwise earlier.
       const delta = e.deltaY > 0 ? -sliceAngle : sliceAngle
+      targetRef.current += delta
 
-      // accumulate target
-      targetRef.current = targetRef.current + delta
-
-      // start animation toward new target
       if (!runningRef.current) {
-        // ensure rotationRef starts at the current state
         rotationRef.current = rotationRef.current ?? rotation
         startAnim()
       }
@@ -99,8 +95,8 @@ export default function RotaryDial({
       el.removeEventListener('wheel', onWheel)
       stopAnim()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sliceAngle])
+
 
   // make sure rotationRef mirrors rotation on mount/changes outside rAF
   useEffect(() => {
@@ -142,6 +138,7 @@ export default function RotaryDial({
 
   return (
     <div
+      ref={wrapperRef}
       className={styles.wrapper}
       style={{ width: size, height: size }}
     >
