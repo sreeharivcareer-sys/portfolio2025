@@ -26,7 +26,7 @@ export default function RotaryDial({
     if (onChange && data[selectedIndex]) {
       onChange(data[selectedIndex])
     }
-  }, [selectedIndex])
+  }, [selectedIndex, data, onChange])
 
   function startAnim() {
     if (runningRef.current) return
