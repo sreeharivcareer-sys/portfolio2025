@@ -9,7 +9,7 @@ export const DarkHeader = ({blackMenu, blackWish}) => {
         <Wish blackMenu={blackMenu} blackWish={blackWish}/>
         <div className={styles.linkContainer}>
             <a href="https://linkedin.com/in/sreehari-v-1249b1103" className={styles.bannerLink}>LinkedIn</a> / 
-            <p href="" className={styles.bannerLink}>Resume</p>
+                  <a href="https://linkedin.com/in/sreehari-v-1249b1103" className={styles.bannerLink}>Resume</a>
         </div>  
         <div className={styles.menuContainer}>
             <div className={styles.menuItem}>Index</div> /
