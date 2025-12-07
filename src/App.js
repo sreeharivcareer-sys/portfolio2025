@@ -83,10 +83,10 @@ function App() {
       <div className="scroll-section">
         <Skills />
       </div>
-      {/*<div className="scroll-section">
+       <div className="scroll-section">
         <Tools />
       </div>
-      <div ref={refA} className="scroll-section">
+      {/*<div ref={refA} className="scroll-section">
         <ExperienceContainer />
       </div>
       <div ref={refEdu} className="scroll-section">

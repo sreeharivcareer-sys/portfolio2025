@@ -36,6 +36,28 @@ export const Tools = () => {
                 </div>
                 <div className={styles.toolsRight}>
                     <div className={styles.mainToolWrapper}>
+
+                        <div className={styles.selectedToolDescWrapper}>
+                            <div
+                                key={selectedTool?.id + '-name'}
+                                className={`${styles.selectedToolName} ${selectedTool ? styles.nameSlide : ''}`}
+                            >
+                                {selectedTool?.name}
+                            </div>
+                            <div
+                                key={selectedTool?.id + '-use'}
+                                className={`${styles.toolUse} ${selectedTool ? styles.useSlideIn : ''}`}
+                            >
+                                {toolsData[selectedTool.id]?.use}
+                            </div>
+                            <div
+                                key={selectedTool?.id + '-exp'}
+                                className={`${styles.toolExp} ${selectedTool ? styles.expSlide : ''}`}
+                            >
+                                {toolsData[selectedTool.id]?.experience}
+                            </div>
+                        </div>
+
                         <div
                             key={`${selectedTool.id}-icon}`}
                             className={`${styles.selectedIcon} ${selectedTool ? styles.show : ''}`}
@@ -43,28 +65,8 @@ export const Tools = () => {
                             <img src={`/assets/icons/${selectedTool.id}.png`} alt="" />
                         </div>
 
-
-                        <div
-                            key={selectedTool?.id + '-name'}
-                            className={`${styles.selectedToolName} ${selectedTool ? styles.nameSlide : ''}`}
-                        >
-                            {selectedTool?.name}
-                        </div>
-
-
                     </div>
-                    <div
-                        key={selectedTool?.id + '-use'}
-                        className={`${styles.toolUse} ${selectedTool ? styles.useSlideIn : ''}`}
-                    >
-                        {toolsData[selectedTool.id]?.use}
-                    </div>
-                    <div
-                        key={selectedTool?.id + '-exp'}
-                        className={`${styles.toolExp} ${selectedTool ? styles.expSlide : ''}`}
-                    >
-                        {toolsData[selectedTool.id]?.experience}
-                    </div>
+
                 </div>
             </div>
         </div >

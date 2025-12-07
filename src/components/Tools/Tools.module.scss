@@ -2,35 +2,63 @@
     height: 100vh;
     padding: 20px;
     background-color: #ffffff;
-    padding: 2rem 0 0 2rem;
+    padding: 30px 0 0 2rem;
+
 
     .toolsHeader {
-        font-size: 52px;
+        font-size: 2rem;
         font-weight: 700;
         color: #2d393d;
-        margin-top: 4rem;
+        margin-top: 3rem;
+        margin-right: 30px;
+
+        @media (max-width: 700px) {
+            width: 92%;
+            margin-top: -5px;
+            text-align: right;
+        }
     }
 
     .toolsWraper {
         width: 100%;
-        height: 100%;
-        display: flex;
+        height: 95vh;
+        position: relative;
     }
 
     .toolsLeft {
-        width: 50%;
+        width: 100%;
+        position: absolute;
+        bottom: 100px;
+
     }
 
     .toolsRight {
-        width: 40%;
+        float: right;
+        width: 80%;
+        text-align: right;
+        padding-right: 2rem;
+
+        @media (max-width: 600px) {
+            padding-right: 0px;
+            text-align: left;
+            width: 95%;
+        }
+
+        // background-color: #399dbe;
     }
 
     .toolsGrid {
         margin-top: 30px;
         display: grid;
-        grid-template-columns: repeat(5, 140px);
-        grid-auto-rows: 140px;
+        grid-template-columns: repeat(5, 15vh);
+        grid-auto-rows: 15vh;
         position: relative;
+
+        @media (max-width: 790px) {
+
+            grid-template-columns: repeat(5, 18vw);
+            grid-auto-rows: 18vw;
+        }
     }
 
     .tile {
@@ -46,11 +74,12 @@
         // filter: brightness(0.75);
         .toolsIcon {
             display: block;
-            width: 50px;
+            width: 2rem;
         }
 
         .toolsText {
             display: none;
+        font-size: .8rem;
         }
     }
 
@@ -120,16 +149,39 @@
 }
 
 .mainToolWrapper {
-    display: flex;
-    align-items: center;
     width: 100%;
-    margin-left: -200px;
+
+
+    .selectedToolDescWrapper {
+        margin-top: 1vh;
+        padding-right: 2rem;
+    }
 
     .selectedIcon {
-        width: 100px;
+        width: 30vh;
         transform-origin: center;
         transform: scaleX(0);
         opacity: 0;
+        margin-top: 4vh;
+        padding-right: 8rem;
+        float: right;
+
+        @media (max-width: 800px) {
+            width: 150px;
+            height: 140px;
+            margin-top: 4vh;
+            padding-right: 5rem;
+
+        }
+
+        img {
+            width: 40vh !important;
+
+            @media (max-width: 900px) {
+
+                width: 100% !important;
+            }
+        }
     }
 
     .selectedIcon.show {
@@ -139,7 +191,7 @@
 
 
     .selectedIcon img {
-        width: 300px;
+        width: 10rem;
         margin-left: -10px;
         opacity: 0;
         animation: fadeIn 0.2s ease forwards;
@@ -148,25 +200,29 @@
 }
 
 .selectedToolName {
-    font-size: 40px;
+
+    font-size: 2rem;
     color: #2d393d;
-    margin-left: 275px;
     white-space: nowrap;
     opacity: 0;
     transform: translateX(-20px);
+
+    @media (max-width: 900px) {
+        margin-top: 4vh;
+        padding-right: 5rem;
+    }
 }
+
 .toolUse {
-    font-size: 30px;
+    font-size: 1.2rem;
     color: #2d393d;
-    margin-left: 175px;
     opacity: 0;
     transform: translateX(20px);
 }
 
 .toolExp {
-    font-size: 30px;
+    font-size: 1.2rem;
     color: #2d393d;
-    margin-left: 175px;
     opacity: 0;
     transform: translateX(-20px);
 }
