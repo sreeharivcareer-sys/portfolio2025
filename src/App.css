@@ -26,6 +26,23 @@ html {
 html,
 body {}
 
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* IE/old Edge */
+* {
+  -ms-overflow-style: none;
+}
+
+
 
 @media (max-width: 675px) {
   .scroll-section {

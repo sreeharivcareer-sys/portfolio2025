@@ -71,7 +71,7 @@ export default function CircularSkill({ name, level, active }) {
 
       </svg>
 
-      <div style={{ marginTop: 6 , fontSize: 20}}>{name}</div>
+      <div style={{ marginTop: -6 , fontSize: 15}}>{name}</div>
     </div>
     </div>
   );

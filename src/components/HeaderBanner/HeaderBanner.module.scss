@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
 
-    @media (min-width: 675px) and (max-width: 900px) {
+    @media (min-width: 675px) and (max-width: 1000px) {
         //TAB
         display: none;
     }
@@ -57,7 +57,7 @@
     padding: 2rem;
 
 
-    @media (min-width: 675px) and (max-width: 900px) {
+    @media (min-width: 675px) and (max-width: 1000px) {
         //TAB
         display: block;
     }
@@ -69,7 +69,7 @@
     .wishContainer {
         margin-top: 30px;
 
-        @media (min-width: 675px) and (max-width: 900px) {
+        @media (min-width: 675px) and (max-width: 1000px) {
             //TAB
             display: none;
         }
@@ -83,13 +83,13 @@
     left: 0;
     top: 0;
     width: 0%;
+    overflow: hidden;
     padding: 10px;
     height: 100vh;
     background-color: #fff;
-    transform: translateX(200px);
     /* start slightly to the right */
     transition:
-        transform 0.3s ease-in;
+        opacity 0.3s ease-out;
 
     .menuHeader {
         display: flex;
