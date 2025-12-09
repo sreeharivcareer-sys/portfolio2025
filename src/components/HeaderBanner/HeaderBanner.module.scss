@@ -55,6 +55,9 @@
 .mobMenu {
     display: none;
     padding: 2rem;
+    .menuButton {
+        width: 30px;
+    }
 
 
     @media (min-width: 675px) and (max-width: 1000px) {

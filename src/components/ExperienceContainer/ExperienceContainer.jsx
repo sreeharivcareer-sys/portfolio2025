@@ -21,24 +21,22 @@ export const ExperienceContainer = () => {
 
   return (
     <div className={styles.expContainer}>
+
       <div className={styles.expWrapper}>
 
         <div className={styles.expLeft}>
 
-          <div className={styles.expLabel}>
-            Organisations I<br /> worked for
-          </div>
 
           <div className={styles.companyList}>
             <motion.div
               ref={reftcs}
               className={`${styles.companyContainer} ${viewFlag === 'tcs' ? styles.underLine : ''}`}
               onMouseEnter={() => setViewFlag('tcs')}
-              initial={{ opacity: 0, transform: 'translateX(-160px)' }}
+              initial={{ opacity: 0, transform: 'translateX(-10px)' }}
               animate={
                 isTcsInView
                   ? { opacity: 1, transform: 'translateX(0)' }
-                  : { opacity: 0, transform: 'translateX(-160px)' }
+                  : { opacity: 0, transform: 'translateX(-10px)' }
               }
               transition={{ duration: 1 }}
             >
@@ -52,11 +50,11 @@ export const ExperienceContainer = () => {
               className={`${styles.companyContainer} ${viewFlag === 'keyvalue' ? styles.underLine : ''}`}
 
               onMouseEnter={() => setViewFlag('keyvalue')}
-              initial={{ opacity: 0, transform: 'translateX(-160px)' }}
+              initial={{ opacity: 0, transform: 'translateX(-10px)' }}
               animate={
                 isKeyInView
                   ? { opacity: 1, transform: 'translateX(0)' }
-                  : { opacity: 0, transform: 'translateX(-160px)' }
+                  : { opacity: 0, transform: 'translateX(-10px)' }
               }
               transition={{ duration: 1 }}
             >
@@ -71,11 +69,11 @@ export const ExperienceContainer = () => {
               className={`${styles.companyContainer} ${viewFlag === 'aspire' ? styles.underLine : ''}`}
 
               onMouseEnter={() => setViewFlag('aspire')}
-              initial={{ opacity: 0, transform: 'translateX(-160px)' }}
+              initial={{ opacity: 0, transform: 'translateX(-10px)' }}
               animate={
                 isAspInView
                   ? { opacity: 1, transform: 'translateX(0)' }
-                  : { opacity: 0, transform: 'translateX(-160px)' }
+                  : { opacity: 0, transform: 'translateX(-10px)' }
               }
               transition={{ duration: 1 }}
             >
@@ -89,11 +87,11 @@ export const ExperienceContainer = () => {
               className={`${styles.companyContainer} ${viewFlag === 'mine' ? styles.underLine : ''}`}
 
               onMouseEnter={() => setViewFlag('mine')}
-              initial={{ opacity: 0, transform: 'translateX(-160px)' }}
+              initial={{ opacity: 0, transform: 'translateX(-10px)' }}
               animate={
                 isAspInView
                   ? { opacity: 1, transform: 'translateX(0)' }
-                  : { opacity: 0, transform: 'translateX(-160px)' }
+                  : { opacity: 0, transform: 'translateX(-10px)' }
               }
               transition={{ duration: 1 }}
             >
@@ -106,16 +104,24 @@ export const ExperienceContainer = () => {
 
 
         <div className={styles.expRight}>
+          <div className={styles.expLabel}>
+            Organisations I worked for
+          </div>
           <div className={styles.expNameContainer}>
             <div className={`${styles.companyName} ${viewFlag === 'tcs' ? styles.show : ''}`}>
-              TATA   CONSULTANCY <br />SERVICES
+              <div className={styles.shortName}>TCS</div>
+              <span className={styles.companyFullName}>Tata Consultancy Services</span>&nbsp; | &nbsp;
+              <span className={styles.companyLoc}>Kochi</span> &nbsp;|&nbsp;
+              <span className={styles.fromTo}>
+                2017 - 2019
+              </span>
             </div>
 
             <div className={styles.descWrapper}>
               <div className={styles.companyDesc}
                 style={viewFlag === 'tcs' ?
                   { opacity: 1, transform: 'translateX(0)' } :
-                  { opacity: 0, transform: 'translateX(-100px)' }}>
+                  { opacity: 0, transform: 'translateX(-10px)' }}>
                 <div className={styles.bullet}>
                   <div className={styles.bulletPoints}>
                     <img src="/assets/arrow.png" alt="flag" style={{ width: '100%', height: '100%' }} />
@@ -152,16 +158,21 @@ export const ExperienceContainer = () => {
 
             </div>
             <div className={`${styles.companyName} ${viewFlag === 'keyvalue' ? styles.show : ''}`}>
-              KEYVALUE <br />SYSTEMS
+              <div className={styles.shortName}>KEYVALUE</div>
+              <span className={styles.companyFullName}>Keyvalue systems</span>&nbsp; | &nbsp;
+              <span className={styles.companyLoc}>Kochi</span> &nbsp;|&nbsp;
+              <span className={styles.fromTo}>
+                2019-2022
+              </span>
             </div>
             <div className={styles.descWrapper}>
               <div className={styles.companyDesc}
                 style={viewFlag === 'keyvalue' ?
                   { opacity: 1, transform: 'translateX(0)' } :
-                  { opacity: 0, transform: 'translateX(-100px)' }}>
+                  { opacity: 0, transform: 'translateX(-10px)' }}>
                 <div className={styles.bullet}>
                   <div className={styles.bulletPoints}>
-                    <img src="/assets/arrow.png" alt="flag" style={{ width: '100%', height: '100%' }} />
+                    <img src="/assets/arrow.png" alt="flag" />
                   </div>
                   <div className={styles.descText}>
                     Mobile App development (React Native)
@@ -198,15 +209,19 @@ export const ExperienceContainer = () => {
 
 
 
-
             <div className={`${styles.companyName} ${viewFlag === 'aspire' ? styles.show : ''}`}>
-              ASPIRE <br />SYSTEMS
+              <div className={styles.shortName}>ASPIRE</div>
+              <span className={styles.companyFullName}>Aspire systems</span>&nbsp; | &nbsp;
+              <span className={styles.companyLoc}>Kochi</span> &nbsp;|&nbsp;
+              <span className={styles.fromTo}>
+                2022 - 2025
+              </span>
             </div>
             <div className={styles.descWrapper}>
               <div className={styles.companyDesc}
                 style={viewFlag === 'aspire' ?
                   { opacity: 1, transform: 'translateX(0)' } :
-                  { opacity: 0, transform: 'translateX(-100px)' }}>
+                  { opacity: 0, transform: 'translateX(-10px)' }}>
                 <div className={styles.bullet}>
                   <div className={styles.bulletPoints}>
                     <img src="/assets/arrow.png" alt="flag" style={{ width: '100%', height: '100%' }} />

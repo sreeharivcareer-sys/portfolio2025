@@ -21,7 +21,7 @@ function App() {
   const refA = useRef(null);
   const refTools = useRef(null);
   const refEdu = useRef(null);
-  const refConnect = useRef(null);  
+  const refConnect = useRef(null);
   const refMain = useRef(null)
 
   useEffect(() => {
@@ -46,7 +46,7 @@ function App() {
             setBlackWish(entry.isIntersecting);
           }
           if (entry.target === refMain.current) {
-            setNotMain(!entry.isIntersecting);            
+            setNotMain(!entry.isIntersecting);
           }
 
         });
@@ -83,16 +83,16 @@ function App() {
       <div className="scroll-section">
         <Skills />
       </div>
-       <div className="scroll-section">
+      <div className="scroll-section">
         <Tools />
       </div>
-      {/*<div ref={refA} className="scroll-section">
+      <div ref={refA} className="scroll-section">
         <ExperienceContainer />
       </div>
       <div ref={refEdu} className="scroll-section">
         <Education animate={animateScore} />
       </div>
-      <div className="scroll-section">
+      {/*<div className="scroll-section">
         <Reference />
       </div>
        <div ref={refConnect}  className="scroll-section">
