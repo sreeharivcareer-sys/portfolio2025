@@ -18,24 +18,46 @@ function App() {
   const [animateScore, setAnimateScore] = useState(false);
   const [notMain, setNotMain] = useState(false);
 
-  const refA = useRef(null);
+  const refExp = useRef(null);
   const refTools = useRef(null);
   const refEdu = useRef(null);
   const refConnect = useRef(null);
-  const refMain = useRef(null)
+  const refMain = useRef(null);
+  const refSkills = useRef(null);
+  const refReference = useRef(null);
+  
+
+
+  const sectionRefs = {
+    refMain: refMain,       // Corresponds to Index menu item
+    refSkills: refSkills,    // Corresponds to Skills menu item
+    refTools: refTools,       // Corresponds to Gear menu item
+    refEdu: refEdu,    // Corresponds to Education menu item
+    refReference: refReference, // Corresponds to Reference menu item
+    refContact: refConnect,
+    refExp:refExp   // Corresponds to Contact menu item
+  };
+
+  const scrollToSection = (refKey) => {
+    const ref = sectionRefs[refKey];
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
 
-          if (entry.target === refA.current) {
+          if (entry.target === refExp.current) {
             setBlackWish(entry.isIntersecting);
           }
 
           if (entry.target === refTools.current) {
-            setBlackMenu(entry.isIntersecting);
-            setBlackWish(entry.isIntersecting);
           }
 
           if (entry.target === refEdu.current) {
@@ -54,7 +76,7 @@ function App() {
       { threshold: 0.2 }
     );
 
-    if (refA.current) observer.observe(refA.current);
+    if (refExp.current) observer.observe(refExp.current);
     if (refTools.current) observer.observe(refTools.current);
     if (refEdu.current) observer.observe(refEdu.current);
     if (refConnect.current) observer.observe(refConnect.current);
@@ -72,7 +94,7 @@ function App() {
   return (
     <div className="App">
       <div className='stickey-header'>
-        {blackMenu ? <DarkHeader notMain={notMain} blackMenu={blackMenu} blackWish={blackWish} /> : <HeaderBanner notMain={notMain} blackWish={blackWish} blackMenu={blackMenu} />}
+        <HeaderBanner scrollToSection={scrollToSection} notMain={notMain} blackWish={blackWish} blackMenu={blackMenu} />
       </div>
 
 
@@ -80,24 +102,24 @@ function App() {
         <MainContainer />
       </div>
 
-      <div className="scroll-section">
+      <div ref={refSkills} className="scroll-section">
         <Skills />
       </div>
-      <div className="scroll-section">
+      <div ref={refTools} className="scroll-section">
         <Tools />
       </div>
-      <div ref={refA} className="scroll-section">
+      <div ref={refExp} className="scroll-section">
         <ExperienceContainer />
       </div>
       <div ref={refEdu} className="scroll-section">
         <Education animate={animateScore} />
       </div>
-      <div className="scroll-section">
+      <div ref={refReference}  className="scroll-section">
         <Reference />
       </div>
-      {/*<div ref={refConnect}  className="scroll-section">
+      <div ref={refConnect}  className="scroll-section">
         <Connect />
-      </div> */}
+      </div>
     </div>
   );
 }

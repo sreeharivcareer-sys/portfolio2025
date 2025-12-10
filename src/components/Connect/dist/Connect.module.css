@@ -1,0 +1,112 @@
+.connectContainer {
+  height: 100vh;
+  background-color: #2d393d;
+  padding: 30px 0 0 2rem;
+}
+.connectContainer .connectHeader {
+  margin-top: 5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+@media (max-width: 700px) {
+  .connectContainer .connectHeader {
+    margin-top: -5px;
+    margin-right: 30px;
+    text-align: right;
+  }
+}
+.connectContainer .contactSection {
+  padding: 4rem 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+@media (max-width: 700px) {
+  .connectContainer .contactSection {
+    display: block;
+    padding: 1rem;
+  }
+}
+.connectContainer .left {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  position: relative;
+}
+@media (max-width: 700px) {
+  .connectContainer .left {
+    gap: 20px;
+  }
+}
+.connectContainer .group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.connectContainer .group h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+.connectContainer .group a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #FE5710;
+  cursor: pointer;
+}
+.connectContainer .group a:hover {
+  opacity: 0.7;
+}
+.connectContainer .dot {
+  width: 14px;
+  height: 14px;
+  background: #FE5710;
+  border-radius: 50%;
+}
+.connectContainer .projectNote {
+  margin-top: 40px;
+}
+@media (max-width: 700px) {
+  .connectContainer .projectNote {
+    margin-top: 20px;
+  }
+}
+.connectContainer .projectNote p {
+  font-size: 15px;
+  color: #fff;
+  margin: 0 0 8px;
+}
+.connectContainer .projectNote h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+}
+.connectContainer .right {
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (max-width: 700px) {
+  .connectContainer .right {
+    width: 100%;
+    gap: 0;
+  }
+}
+.connectContainer .bigText {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-style: italic;
+  color: #fff;
+  max-width: 550px;
+}
+@media (max-width: 700px) {
+  .connectContainer .bigText {
+    max-width: 100%;
+  }
+}
