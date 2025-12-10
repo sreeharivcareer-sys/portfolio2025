@@ -1,0 +1,135 @@
+.bannerContainer {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 675px) and (max-width: 1000px) {
+  .bannerContainer {
+    display: none;
+  }
+}
+@media (max-width: 675px) {
+  .bannerContainer {
+    display: none;
+  }
+}
+.bannerContainer .linkContainer {
+  display: flex;
+  gap: 20px;
+  color: #476671;
+}
+.bannerContainer .linkContainer .bannerLink {
+  font-size: 14px;
+  text-decoration: none;
+  color: #476671;
+}
+.bannerContainer .linkContainer .bannerLink:hover {
+  color: red;
+}
+.bannerContainer .menuContainer {
+  display: flex;
+  gap: 20px;
+  color: #476671;
+}
+.bannerContainer .menuContainer .menuItem {
+  cursor: pointer;
+  font-size: 14px;
+}
+.bannerContainer .menuContainer .menuItem:hover {
+  color: red;
+}
+.bannerContainer .talk {
+  text-decoration: underline;
+  color: #476671;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mobMenu {
+  display: none;
+  padding: 2rem;
+}
+.mobMenu .menuButton {
+  width: 30px;
+}
+@media (min-width: 675px) and (max-width: 1000px) {
+  .mobMenu {
+    display: block;
+  }
+}
+@media (max-width: 675px) {
+  .mobMenu {
+    display: block;
+  }
+}
+.mobMenu .wishContainer {
+  margin-top: 30px;
+}
+@media (min-width: 675px) and (max-width: 1000px) {
+  .mobMenu .wishContainer {
+    display: none;
+  }
+}
+
+.menuPopUp {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  width: 0%;
+  overflow: hidden;
+  padding: 10px;
+  height: 100vh;
+  background-color: #fff;
+  /* start slightly to the right */
+  transition: opacity 0.3s ease-out;
+}
+.menuPopUp .menuHeader {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.menuPopUp .menuHeader .closeMenu {
+  color: #2d393d;
+  font-size: 20px;
+  padding: 20px;
+  cursor: pointer;
+}
+.menuPopUp .menuHeader .menuLabel {
+  color: #2d393d;
+  font-size: 20px;
+  padding: 20px;
+}
+.menuPopUp .menuContainer {
+  padding: 10px;
+}
+.menuPopUp .menuContainer .menuItem {
+  font-size: 5rem;
+  font-weight: 500;
+  height: 4rem;
+  color: #2d393d;
+  text-transform: uppercase;
+}
+.menuPopUp .menuContainer .menuItem:hover {
+  color: #FE5710;
+}
+.menuPopUp .menuContainer .resumeContainer {
+  margin-top: 10vh;
+}
+.menuPopUp .menuContainer .menuResume {
+  font-size: 1.8rem;
+  color: #FE5710;
+  cursor: pointer;
+}
+.menuPopUp .menuContainer .menuLinkedIn {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #FE5710;
+}
+
+.menuPopUp.show {
+  opacity: 1;
+  transform: translateX(0);
+  width: 96%;
+}

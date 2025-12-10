@@ -13,8 +13,8 @@ export const Connect = () => {
                         <a href="https://linkedin.com/in/sreehari-v-1249b1103" target="_blank" rel="noreferrer">
                             LinkedIn
                         </a>
-                        <a href="https://dribbble.com" target="_blank" rel="noreferrer">
-                            Dribbble
+                        <a href="https://www.instagram.com/diecastdiaries_official/" target="_blank" rel="noreferrer">
+                            Instagram
                         </a>
                     </div>
 

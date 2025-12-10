@@ -194,10 +194,13 @@
 
 
             .connectLabel {
-                width: max-content;
-                font-size: 14px;
-                color: #476671;
-                text-align: right;
+                a {
+                    width: max-content;
+                    font-size: 14px;
+                    color: #476671;
+                    text-align: right;
+                    text-decoration: none;
+                }
             }
 
             .connectIcon {

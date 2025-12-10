@@ -55,6 +55,7 @@
 .mobMenu {
     display: none;
     padding: 2rem;
+
     .menuButton {
         width: 30px;
     }
@@ -98,28 +99,51 @@
         display: flex;
         justify-content: space-between;
         overflow: hidden;
+
         .closeMenu {
             color: #2d393d;
             font-size: 20px;
             padding: 20px;
             cursor: pointer;
         }
+
         .menuLabel {
             color: #2d393d;
             font-size: 20px;
             padding: 20px;
         }
     }
+
     .menuContainer {
         padding: 10px;
+
         .menuItem {
             font-size: 5rem;
             font-weight: 500;
-            color:#2d393d;
-            text-transform:uppercase;
+            height: 4rem;
+            color: #2d393d;
+            text-transform: uppercase;
+
             &:hover {
                 color: #FE5710;
             }
+        }
+
+        .resumeContainer {
+
+            margin-top: 10vh;
+        }
+        .menuResume {
+            font-size: 1.8rem;
+            color: #FE5710;
+            cursor: pointer;
+        }
+
+        .menuLinkedIn {
+            font-size: 1.8rem;
+            // text-decoration: none;
+            cursor: pointer;
+            color: #FE5710;
         }
     }
 }
