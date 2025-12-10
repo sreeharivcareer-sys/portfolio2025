@@ -1,46 +1,58 @@
 .skillContainer {
     height: 100vh;
-    padding: 20px;
     background-color: #f5f5f5;
-    padding: 32px 0 0 2rem;
+    padding: 30px 0 0 2rem;
 
     .skillsHeader {
-        font-size: 52px;
+        font-size: 2rem;
         font-weight: 700;
         color: #2d393d;
-        margin-top: 6rem;
+        margin-top: 3rem;
+        margin-right: 30px;
+
+        @media (max-width: 700px) {
+            margin-top: -5px;
+            text-align: right;
+        }
+
+
     }
 
     .skillWrapper {
-        display: flex;
-        gap: 30px;
-        margin-top: 3rem;
 
 
         .skillLeft {
             font-size: 40px;
-            padding-right: 2rem;
+            padding: 2rem 2rem 2rem 0;
             font-weight: 600;
+            max-height: 45vh;
+            overflow-y: auto;
             line-height: 45px;
             color: #2d393d;
-            border-right: 1px solid #2d393d;
+            background: linear-gradient(to bottom,
+                    rgb(245, 245, 245),
+                    rgba(136, 136, 136, 0.144) 99%);
 
             .skillsGrid {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: repeat(3, auto);
-                /* 4 rows */
-                gap: 24px;
-                /* spacing */
                 justify-items: center;
-                /* center items */
+                width: 100%;
+                display: grid;
+                gap: 1rem;
+
+                /* Adjust tile width here */
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+                @media (max-width: 900px) {
+
+                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                }
+
+                .skillName {}
             }
         }
 
         .skillRight {
-
-            padding-left: 12rem;
-            padding-right: 10rem;
+            padding: 4rem 20px 0 20px;
             color: #2d393d;
         }
     }
@@ -50,7 +62,7 @@
 .skillHeaderWrapper {
     display: flex;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
 .skillHeader {
@@ -58,28 +70,30 @@
 }
 
 .skillText {
-    font-size: 40px;
+    font-size: 2rem;
     display: inline-block;
     animation: slideIn 0.35s ease-out forwards;
 }
 
 .skillDescExp {
-    font-size: 25px;
+    font-size: 1.25rem;
     margin-top: 15px;
     display: inline-block;
     animation: slideIn 0.35s ease-out forwards;
 }
 
-.skillLogo,
+.skillLogo {
+    margin-left: 15px;
+}
+
 .skillUseWrapper,
 .skillExpWrapper {
     position: relative;
-    margin-left: 15px;
 }
 
 .skillLogoImg,
 .skillDescUse {
-    font-size: 25px;
+    font-size: 1.25rem;
     display: inline-block;
     animation: slideInLeft 0.35s ease-out forwards;
 }

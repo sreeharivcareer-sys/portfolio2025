@@ -12,11 +12,19 @@ export default function Skills() {
     const [ref, visible] = useOnScreen({ threshold: 0.3 });
     const [selectedSkill, setSelectedSkill] = useState({ id: "HTML5", name: "HTML 5", level: 90 });
     const [skillDetails, setSkillDetails] = useState({});
+
+    // const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    // useEffect(() => {
+    //     const handleResize = () => setScreenWidth(window.innerWidth);
+    //     window.addEventListener("resize", handleResize);
+    //     return () => window.removeEventListener("resize", handleResize);
+    // }, [])
+
     useEffect(() => {
         setSkillDetails(skillData[selectedSkill.id])
         console.log('selectedSkill:', selectedSkill)
         console.log('selectedSkillData:', skillData[selectedSkill.id])
-
     }, [selectedSkill]);
 
 
@@ -33,7 +41,7 @@ export default function Skills() {
         { id: "SCSS", name: "SCSS", level: 85 },
         { id: "Tailwind", name: "Tailwind", level: 60 },
         { id: "GraphQL", name: "GraphQL", level: 60 },
-        { id: "OpenAi", name: "Open Ai Integration", level: 60 }
+        { id: "OpenAi", name: "Open Ai", level: 60 }
     ];
 
     return (

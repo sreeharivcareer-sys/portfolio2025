@@ -1,0 +1,310 @@
+@charset "UTF-8";
+.referenceContainer {
+  height: 100vh;
+  background-color: #fff;
+  padding: 30px 0 0 2rem;
+}
+@media (max-width: 700px) {
+  .referenceContainer {
+    padding-top: 10px;
+  }
+}
+.referenceContainer .refHeader {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d393d;
+  margin-top: 3rem;
+  margin-right: 30px;
+}
+@media (max-width: 700px) {
+  .referenceContainer .refHeader {
+    margin-top: 10px;
+    text-align: right;
+    font-size: 1.5rem;
+  }
+}
+
+.refWrap {
+  margin-top: 2rem;
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+@media (max-width: 700px) {
+  .refWrap {
+    display: block;
+  }
+}
+
+.refLeft {
+  width: 30%;
+}
+@media (max-width: 700px) {
+  .refLeft {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.refUserWrapper {
+  width: 40%;
+}
+@media (max-width: 700px) {
+  .refUserWrapper {
+    width: 90%;
+  }
+}
+
+@media (max-width: 700px) {
+  .rotaryWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+.refImageWrapper {
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border-style: solid;
+  border-width: 8rem;
+  border-color: #efe9da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 700px) {
+  .refImageWrapper {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+.preview {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  transform: rotate(0deg);
+  animation: settle 420ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform;
+  border-radius: 50%;
+  border: 30px solid #2d393d;
+}
+
+.preview {
+  transform: rotate(0deg);
+}
+
+.animate {
+  animation: settle 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes settle {
+  0% {
+    transform: rotate(45deg) scale(0.96);
+  }
+  60% {
+    transform: rotate(-2deg) scale(1.01);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+.refWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1000px) {
+  .refWrapper {
+    flex-direction: block;
+    align-items: center;
+  }
+}
+.refWrapper .refUserItem {
+  width: 100%;
+  margin-left: 30px;
+  margin-top: 5rem;
+}
+@media (max-width: 700px) {
+  .refWrapper .refUserItem {
+    margin-top: -8.5rem;
+  }
+}
+.refWrapper .refUserItem .refUserName {
+  font-size: 2rem;
+  color: #2d393d;
+}
+.refWrapper .refUserItem .detailsWrapper {
+  display: flex;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.refWrapper .refUserItem .detailsWrapper .designation {
+  margin-right: 10px;
+  color: #FE5710;
+}
+.refWrapper .refUserItem .detailsWrapper .companyName {
+  margin-left: 10px;
+  color: #2d393d;
+  font-weight: bold;
+}
+.refWrapper .refUserItem .commentWrapper {
+  width: 100%;
+}
+@media (max-width: 700px) {
+  .refWrapper .refUserItem .commentWrapper {
+    height: 11rem;
+  }
+}
+.refWrapper .refUserItem .comment {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 32px 40px;
+  font-style: italic;
+}
+@media (max-width: 700px) {
+  .refWrapper .refUserItem .comment {
+    padding: 10px 15px;
+    margin-top: 10px;
+  }
+}
+.refWrapper .refUserItem .comment::before {
+  content: "“";
+  position: absolute;
+  color: #FE5710;
+  top: 10px;
+  left: 10px;
+  font-size: 40px;
+}
+@media (max-width: 700px) {
+  .refWrapper .refUserItem .comment::before {
+    top: 0px;
+    left: 0px;
+    font-size: 25px;
+  }
+}
+.refWrapper .refUserItem .comment::after {
+  content: "”";
+  color: #FE5710;
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  font-size: 40px;
+}
+@media (max-width: 700px) {
+  .refWrapper .refUserItem .comment::after {
+    bottom: 0px;
+    right: 10px;
+    font-size: 25px;
+  }
+}
+.refWrapper .refUserItem .openQuote,
+.refWrapper .refUserItem .closeQuote {
+  font-size: 32px;
+  color: #FE5710;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.refWrapper .contactRef {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (max-width: 1450px) {
+  .refWrapper .contactRef {
+    display: block;
+  }
+}
+.refWrapper .linkedinBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  margin-right: 12px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  font-weight: 500;
+  color: #0a66c2;
+  cursor: pointer;
+}
+.refWrapper .icon {
+  width: 21px;
+  height: 21px;
+  border-radius: 4px;
+  background: #0a66c2;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.refWrapper .text {
+  line-height: 1;
+}
+.refWrapper .mailBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+}
+.refWrapper .mailIcon {
+  font-size: 16px;
+  line-height: 1;
+}
+.refWrapper .mailBtn:hover {
+  color: #FE5710;
+}
+
+.smallRefUser {
+  display: none;
+  margin-bottom: -30px;
+  margin-top: 40px;
+  position: relative;
+}
+.smallRefUser .refUserName {
+  font-size: 2rem;
+  color: #2d393d;
+}
+.smallRefUser .detailsWrapper {
+  display: flex;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.smallRefUser .detailsWrapper .designation {
+  margin-right: 10px;
+  color: #FE5710;
+}
+.smallRefUser .detailsWrapper .companyName {
+  margin-left: 10px;
+  color: #2d393d;
+  font-weight: bold;
+}
+@media (max-width: 700px) {
+  .smallRefUser {
+    display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  .bigRefUser {
+    display: none;
+  }
+}
