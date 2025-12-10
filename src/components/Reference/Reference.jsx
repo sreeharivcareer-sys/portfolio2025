@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './Reference.module.scss';
-import WarningText from './WarningText/WarningText';
 import referenceData from '../../data/refData';
 import RotaryDial from './RotaryDial/RotaryDial';
 

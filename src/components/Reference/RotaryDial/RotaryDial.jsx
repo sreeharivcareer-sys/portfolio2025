@@ -233,7 +233,7 @@ export default function RotaryDial({
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('mouseup', onUp)
     }
-  }, [sliceAngle])
+  }, [sliceAngle, startDrag, moveDrag, endDrag])
 
   // ----- Touch Drag useEffect Hook (Unchanged for brevity) -----
   useEffect(() => {
