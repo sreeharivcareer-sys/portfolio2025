@@ -3,6 +3,7 @@
   height: 100vh;
   background-color: #fff;
   padding: 30px 0 0 2rem;
+  overflow: hidden;
 }
 @media (max-width: 700px) {
   .referenceContainer {
@@ -160,7 +161,7 @@
 }
 @media (max-width: 700px) {
   .refWrapper .refUserItem .commentWrapper {
-    height: 11rem;
+    height: 10rem;
   }
 }
 .refWrapper .refUserItem .comment {

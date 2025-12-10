@@ -1,4 +1,10 @@
-const skillData = {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var skillData = {
   HTML5: {
     use: "Defines structure, accessibility, and SEO-critical markup for web interfaces.",
     experience: "Built production UIs at all the projects i have worked on, focusing on semantic structure, accessibility, and clean layouts that scale."
@@ -48,5 +54,5 @@ const skillData = {
     experience: "Designed efficient GraphQL APIs to reduce payload size and simplify frontend logic."
   }
 };
-
-export default skillData;
+var _default = skillData;
+exports["default"] = _default;

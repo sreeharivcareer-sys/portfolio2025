@@ -8,7 +8,7 @@ const referenceData = [
     image: "eldhose.JPEG",
     company: "Tata Consultancy Services",
     linkedIn: 'https://linkedin.com/in/eldhose-tj-53941836',
-    comment: "During our time working together, Sreehari showed excellent concentration on detail and UI correctness. His approach to problem solving is methodical and his ability to learn new patterns quickly is impressive. He is the kind of engineer you trust with production work."
+    comment: "Sreehari showed excellent concentration on detail and UI correctness. His approach to problem solving is methodical and his ability to learn new patterns quickly is impressive."
   },
   {
     id: "jackson-ej",
@@ -19,7 +19,7 @@ const referenceData = [
     image: "jackson.JPEG",
     company: "Entry App",
     linkedIn: 'https://linkedin.com/in/jacksonej',
-    comment: "Sreehari played a critical role in building mobile application interfaces and integrating third party SDKs. He is dependable and takes responsibility seriously. His ability to remain composed under pressure made him a solid contributor to the team."
+    comment: "Sreehari played a critical role in building mobile application interfaces and integrating third party SDKs. He is dependable and takes responsibility seriously."
   },
   {
     id: "aswathy-s-mohanan",

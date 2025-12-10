@@ -2,6 +2,7 @@
     height: 100vh;
     background-color: #fff;
     padding: 30px 0 0 2rem;
+    overflow: hidden;
 
     @media (max-width: 700px) {
         padding-top: 10px;
@@ -172,7 +173,7 @@
             width: 100%;
 
             @media (max-width: 700px) {
-                height: 11rem;
+                height: 10rem;
             }
         }
 
