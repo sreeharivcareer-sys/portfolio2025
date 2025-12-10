@@ -4,15 +4,13 @@
   overflow: hidden;
   user-select: none;
   cursor: grab;
-  isolation: isolate; // forces new stacking universe
+  isolation: isolate;
   touch-action: none;
 }
 
 .wrapper:active {
   cursor: grabbing;
 }
-
-
 
 .wrapper:hover {
   overscroll-behavior: contain;
@@ -27,7 +25,6 @@
   z-index: 3;
 }
 
-
 .ring {
   position: absolute;
   inset: 0;
@@ -38,19 +35,14 @@
   z-index: 1;
 }
 
-
-
-
 .item {
   position: absolute;
   pointer-events: none;
   text-align: center;
   transform-origin: center;
   max-width: 120px;
-  z-index: 5; // ABOVE ring
+  z-index: 5;
 }
-
-
 
 .name {
   font-size: 1rem;
@@ -80,18 +72,23 @@
 .centerLabel {
   position: absolute;
   inset: 0;
-  display: flex; /* Keep the main centering logic */
+  display: flex;
+  /* Keep the main centering logic */
   align-items: center;
   justify-content: center;
   pointer-events: none;
   z-index: 4;
-
-  @media (max-width: 650px) {
+}
+@media (max-width: 650px) {
+  .centerLabel {
     /* Change 'display: block' to this: */
     display: flex;
-    flex-direction: column; /* This makes the children stack vertically */
-    align-items: center; /* Keep the centering */
-    justify-content: center; /* Keep the centering */
+    flex-direction: column;
+    /* This makes the children stack vertically */
+    align-items: center;
+    /* Keep the centering */
+    justify-content: center;
+    /* Keep the centering */
   }
 }
 
@@ -102,9 +99,11 @@
 }
 
 .selectTag {
-  display: block; /* This is fine, as it's a child element */
+  display: block;
+  /* This is fine, as it's a child element */
   margin-top: 4px;
-  margin-left: 4px; /* You might want to remove this margin-left if centering */
+  margin-left: 4px;
+  /* You might want to remove this margin-left if centering */
   font-size: 0.6rem;
   opacity: 0.6;
 }

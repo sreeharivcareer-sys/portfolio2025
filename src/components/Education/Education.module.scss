@@ -1,14 +1,23 @@
 .educationContainer {
     height: 100vh;
-    background-color: #f5f5f5;
+    background-color: #2d393d;
     padding: 30px 0 0 2rem;
-    
+
 
     .eduHeader {
-        font-size: 52px;
+
+        margin-top: 5rem;
+        font-size: 2rem;
         font-weight: 700;
-        color: #2d393d;
-        margin-top: 4rem;
+        color: #fff;
+        // left: 200px;
+        // top: 100px;
+
+        @media (max-width: 700px) {
+            margin-top: -5px;
+            margin-right: 30px;
+            text-align: right;
+        }
     }
 
     .eduWrapper {
@@ -16,13 +25,21 @@
         justify-content: center;
         align-items: center;
 
+        @media (max-width: 700px) {
+            flex-direction: column;
+        }
+
         .eduLeft {
             width: 30%;
+
+            @media (max-width: 700px) {
+                display: none;
+            }
 
             .eduItem {
                 padding: 30px;
                 font-size: 18px;
-                color: #2d393d;
+                color: #fff;
                 cursor: pointer;
 
                 &:hover {
@@ -39,24 +56,70 @@
 
         }
 
+        .eduListSmall {
+            margin-top: 60px;
+            display: none;
+            text-align: left;
+            margin-left: -10px;
+
+            @media (max-width: 700px) {
+                display: block;
+            }
+
+            .eduItem {
+                padding: 10px 0;
+                width: 100%;
+                font-size: 18px;
+                color: #fff;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                    font-weight: bold;
+                }
+            }
+
+            .activeEdu {
+                color: #FE5710;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+        }
+
         .eduCenter {
             display: flex;
             justify-content: center;
             align-items: center;
-
             width: 40%;
+
+            @media (max-width: 700px) {
+                margin-top: 10vh;
+            }
         }
 
         .eduRight {
+            display: block;
             text-align: right;
             width: 30%;
+
+            @media (max-width: 700px) {
+                width: 100%;
+                margin-top: 30px;
+            text-align: center;
+            }
 
             .eduInst,
             .eduDegree,
             .eduLevel {
                 padding: 30px;
                 font-size: 18px;
-                color: #2d393d;
+                color: #fff;
+
+                @media (max-width: 700px) {
+                    width: 100%;
+                    padding: 8px 0;
+                white-space: nowrap;
+                }
             }
         }
     }

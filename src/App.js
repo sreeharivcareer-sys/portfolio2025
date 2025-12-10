@@ -92,10 +92,10 @@ function App() {
       <div ref={refEdu} className="scroll-section">
         <Education animate={animateScore} />
       </div>
-      {/*<div className="scroll-section">
+      <div className="scroll-section">
         <Reference />
       </div>
-       <div ref={refConnect}  className="scroll-section">
+      {/*<div ref={refConnect}  className="scroll-section">
         <Connect />
       </div> */}
     </div>

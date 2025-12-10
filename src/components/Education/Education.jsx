@@ -42,12 +42,12 @@ export const Education = ({ animate }) => {
                         max={selectedEdu.scoreType === "CGPA" ? 10 : 100}
                         color="#FE5710"
                         animate={animate}
-                        trackColor="#fff"
-                        size={600}
-                        strokeWidth={33}
+                        trackColor="#2d393d"
+                        strokeWidth={15}
                         eduObj={selectedEdu}
 
                     />
+
                 </div>
 
                 <div className={styles.eduRight}>
@@ -55,6 +55,16 @@ export const Education = ({ animate }) => {
                     <div className={styles.eduLevel}>{selectedEdu.level}</div>
                     <div className={styles.eduInst}>{selectedEdu.institution}</div>
 
+                </div>
+                <div className={styles.eduListSmall}>
+                    {eduList.map((edu) => (
+                        <div
+                            className={`${styles.eduItem} ${selectedEdu?.id === edu.id ? styles.activeEdu : ""}`}
+                            key={`${edu.id}-item`}
+                            onMouseEnter={() => setSelectedEdu({ id: edu.id, ...eduData[edu.id], ...edu })}>
+                            {edu.name}
+                        </div>
+                    ))}
                 </div>
             </div>
         </div >
