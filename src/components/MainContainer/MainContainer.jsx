@@ -25,8 +25,7 @@ export const MainContainer = () => {
             <div className={styles.leftContainer}>
                 <div className={styles.leftWrapper}>
                     <div className={styles.nameLabel}>Hi There, I am </div>
-                    <div>
-                        <span className={styles.name}>Saketh</span>
+                    <div>  <span className={styles.name}>Aswathy</span>
                         <span className={styles.subName}>hari</span>
                         <span className={styles.name}> V</span>
                     </div>
